@@ -12,6 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2020_08_13_201407) do
 
+  create_table "actors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+  end
+
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.integer "actor_id"
