@@ -7,13 +7,13 @@ Show.destroy_all
 # Character.reset_pk_sequence
 
 
-actor1=Actor.new(first_name: "Waverly", last_name: "Leung")
-actor2=Actor.new(first_name: "Christy", last_name: "Tropila")
+actor1=Actor.create(first_name: "Waverly", last_name: "Leung")
+actor2=Actor.create(first_name: "Christy", last_name: "Tropila")
 
-network=Network.new(call_letters: "call letter", channel: 30)
+network=Network.create(call_letters: "call letter", channel: 30)
 
-show1=Show.new(name: "Spongebob", network_id: network.id )
-character=Character.new(name: "spongebob", actor_id: actor1.id, show_id: show1.id, catchphrase: "catchphrase")
+show1=Show.create(name: "Spongebob", network_id: network.id )
+character=Character.create(name: "spongebob", actor_id: actor1.id, show_id: show1.id, catchphrase: "catchphrase")
 
 
 

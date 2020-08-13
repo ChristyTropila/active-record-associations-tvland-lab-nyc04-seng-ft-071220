@@ -1,6 +1,7 @@
+#require 'pry'
 class Actor < ActiveRecord::Base
-   has_many :shows
-   has_many(:characters, {through: :shows})
+   has_many :characters
+   has_many(:shows, {through: :characters})
 
 #Write a method in `#full_name`
 #returns the first and last name of an actor.
@@ -23,6 +24,10 @@ class Actor < ActiveRecord::Base
     #-find all characters that actor plays
     #-iterate over characters and compare to itself
     #-mutate each array 'character-show name'
+    characters.collect do |character|
+        "#{character.name} - #{character.show.name}"
+        #binding.pry
+    end
 
   end
 
